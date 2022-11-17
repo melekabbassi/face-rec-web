@@ -18,14 +18,7 @@ function App() {
   return (
     <div className="App">
       <h1>Face Recognition App</h1>
-      <h2>Matches</h2>
-      <div>
-        { data && data.map((data) => (
-          <div>
-            <p>{data}</p>
-          </div>
-        ))}
-      </div>
+      <h2>Matches</h2>   
     </div>
   );
 }
