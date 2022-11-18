@@ -35,19 +35,28 @@ function App() {
   return (
     <div className="App">
       <h1>Face Recognition App</h1>
-      <h2>Matches</h2>   
-      <ul>
-        {data?.matches.map((match, index= 0) => (
-          <li key={match.id}>
-            <h3>{match}</h3>
+      <div className="container">
+        <h2>Matches</h2>   
+        <ul>
+          {data?.matches.map((match, index= 0) => (
+            <li key={match.id}>
+              <h3>{match}</h3>
 
-            <button onClick={() => getImage(index)}>Get Image</button>
-          </li>
-        ))}            
-      </ul>
+              <button onClick={() => getImage(index)}>Get Image</button>
+            </li>
+          ))}            
+        </ul>
+        <img src={image} alt="Matched Face" />
+      </div>
 
-      <img src={image} alt="Matched Face" />
+      <div className='uploadfile'>
+        <h2>Upload File</h2>
+        <form action="http://127.0.0.1:8000/uploadfile" method="POST" encType="multipart/form-data">
+          <input type="file" name="file" />
+          <input type="submit" value="Upload" />
+        </form>
 
+      </div>
     </div>
   );
 }
